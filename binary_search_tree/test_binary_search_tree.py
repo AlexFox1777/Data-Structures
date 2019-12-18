@@ -23,8 +23,8 @@ class BinarySearchTreeTests(unittest.TestCase):
         self.bst.insert(7)
         self.assertTrue(self.bst.contains(5))
         self.assertTrue(self.bst.contains(2))
-        # self.assertTrue(self.bst.contains(7))
-        # self.assertFalse(self.bst.contains(8))
+        self.assertTrue(self.bst.contains(7))
+        self.assertFalse(self.bst.contains(8))
 
     def test_get_max(self):
         self.assertEqual(self.bst.get_max(), 5)
@@ -103,6 +103,7 @@ class BinarySearchTreeTests(unittest.TestCase):
         self.assertEqual(output, "2\n4\n3\n6\n7\n5\n8\n1\n")
 
         sys.stdout = stdout_  # Restore stdout
+
 
 if __name__ == '__main__':
     unittest.main()

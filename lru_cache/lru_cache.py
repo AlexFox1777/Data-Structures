@@ -28,13 +28,7 @@ class LRUCache:
     """
 
     def get(self, key):
-        current_node = self.storage.head
-        while current_node is not None:
-            if current_node.value == key:
-                current_node.delete()
-                self.storage.add_to_head(key)
-                return self.hash_table.get(key)
-            current_node = current_node.next
+        self.storage.move_to_front(key)
         return self.hash_table.get(key)
 
     """
@@ -59,11 +53,7 @@ class LRUCache:
             self.capacity += 1
             # write item at the beginning of the list
             self.storage.add_to_head(key)
-            print('capacity < limit')
-            print(f'{key}')
         else:
-            print('capacity >= limit')
-            print(f'{key}')
             self.storage.add_to_head(key)
             self.storage.remove_from_tail()
             del self.hash_table[self.storage.tail.value]

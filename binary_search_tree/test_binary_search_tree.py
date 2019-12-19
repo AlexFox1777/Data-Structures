@@ -18,7 +18,8 @@ class BinarySearchTreeTests(unittest.TestCase):
         self.bst.insert(1)
         self.assertEqual(self.bst.left.right.value, 3)
         self.assertEqual(self.bst.right.left.value, 6)
-        self.bst.in_order_print(self.bst)
+        # self.bst.in_order_print(self.bst.left)
+        # self.bst.bft_print(self.bst.left)
 
     def test_contains(self):
         self.bst.insert(2)

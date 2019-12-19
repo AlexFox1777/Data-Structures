@@ -21,7 +21,8 @@ class BinarySearchTreeTests(unittest.TestCase):
         # self.bst.in_order_print(self.bst.left)
         # self.bst.bft_print(self.bst.left)
         # self.bst.dft_print(self.bst.left)
-        self.bst.pre_order_dft(self.bst)
+        # self.bst.pre_order_dft(self.bst)
+        # self.bst.post_order_dft(self.bst)
 
     def test_contains(self):
         self.bst.insert(2)

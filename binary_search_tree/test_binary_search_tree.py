@@ -12,15 +12,24 @@ class BinarySearchTreeTests(unittest.TestCase):
     def test_insert(self):
         self.bst.insert(2)
         self.bst.insert(3)
+        self.bst.insert(4)
         self.bst.insert(7)
         self.bst.insert(6)
+        self.bst.insert(1)
         self.assertEqual(self.bst.left.right.value, 3)
         self.assertEqual(self.bst.right.left.value, 6)
+        # self.bst.in_order_print(self.bst.left)
+        # self.bst.bft_print(self.bst.left)
+        # self.bst.dft_print(self.bst.left)
+        # self.bst.pre_order_dft(self.bst)
+        # self.bst.post_order_dft(self.bst)
 
     def test_contains(self):
         self.bst.insert(2)
         self.bst.insert(3)
         self.bst.insert(7)
+        self.assertTrue(self.bst.contains(5))
+        self.assertTrue(self.bst.contains(2))
         self.assertTrue(self.bst.contains(7))
         self.assertFalse(self.bst.contains(8))
 
@@ -101,6 +110,7 @@ class BinarySearchTreeTests(unittest.TestCase):
         self.assertEqual(output, "2\n4\n3\n6\n7\n5\n8\n1\n")
 
         sys.stdout = stdout_  # Restore stdout
+
 
 if __name__ == '__main__':
     unittest.main()
